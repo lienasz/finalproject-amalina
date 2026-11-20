@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masha Website</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff0f6;
+            color: #493342;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #ed73ad, #f6a5c9);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            align-items: center;
+            background: #493342;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            margin-right: 8px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #e96da9;
+            transform: translateY(-2px);
+        }
+
+        nav .back {
+            margin-left: auto;
+            margin-right: 0;
+            background: #e96da9;
+        }
+
+        /* CONTAINER */
+        .container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            max-width: 1400px;
+            margin: auto;
+            padding: 40px 4%;
+        }
+
+        /* KONTEN KIRI */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* ARTIKEL */
+        .article {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(180, 80, 130, 0.08);
+            transition: 0.3s;
+            border: 1px solid #f8dce9;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(180, 80, 130, 0.15);
+        }
+
+        .article h2 {
+            color: #d94f91;
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .article h4 {
+            color: #927185;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .article img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .article h3 {
+            color: #d94f91;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .article p {
+            color: #6d5967;
+            font-size: 14px;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .side-box {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(180, 80, 130, 0.08);
+            border: 1px solid #f8dce9;
+        }
+
+        .side-box h2 {
+            color: #d94f91;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* FOTO ABOUT ME */
+        .side-box img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .side-box p {
+            font-size: 13px;
+            color: #6d5967;
+            line-height: 2;
+        }
+
+        /* FOLLOW ME */
+        .side-box a {
+            display: block;
+            background: #fff0f6;
+            color: #c34482;
+            text-decoration: none;
+            padding: 11px 15px;
+            margin-bottom: 10px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .side-box a:hover {
+            background: #e96da9;
+            color: white;
+            padding-left: 22px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #493342;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 10px;
+        }
+
+        footer h2 {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #f6bfd9;
+        }
+
+        /* RESPONSIVE TABLET */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 2fr 1fr;
+                gap: 20px;
+            }
+
+            .article {
+                padding: 20px;
+            }
+
+            .article img {
+                height: 280px;
+            }
+
+            .side-box {
+                padding: 18px;
+            }
+        }
+
+        /* RESPONSIVE HP */
+        @media (max-width: 700px) {
+
+            header {
+                padding: 40px 15px;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            header p {
+                font-size: 13px;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                padding: 9px;
+                margin-right: 2px;
+                font-size: 12px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px 15px;
+                gap: 20px;
+            }
+
+            .article {
+                padding: 20px;
+            }
+
+            .article h2 {
+                font-size: 23px;
+            }
+
+            .article img {
+                height: 230px;
+            }
+
+            .sidebar {
+                gap: 20px;
+            }
+
+            .side-box img {
+                height: 220px;
+            }
+
+            footer {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Welcome to Masha Website</h1>
+        <p>♡ Mengenal Lebih Dekat Karakter Masha ♡</p>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="./table.html">Home</a>
+        <a href="./kontrol-lampu.html">Project</a>
+        <a href="./table.html" class="back">Back</a>
+    </nav>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- KONTEN UTAMA -->
+        <main class="content">
+
+            <!-- ARTIKEL PERTAMA -->
+            <div class="article">
+
+                <h2>Tentang Masha</h2>
+
+                <h4>♡ Masha and The Bear</h4>
+
+                <img src="../img/marrr.png" alt="Masha">
+
+                <h3>Siapa Itu Masha?</h3>
+
+                <p>
+                    Masha adalah tokoh utama dalam kartun
+                    Masha and the Bear. Masha merupakan anak
+                    perempuan kecil yang berasal dari Rusia.
+                    Ia memiliki rambut pirang, mata indah,
+                    dan selalu memakai gaun berwarna merah
+                    muda serta kerudung. Masha memiliki sifat
+                    yang ceria, lucu, aktif, pemberani, dan
+                    suka berpetualang. Ia juga memiliki sahabat
+                    seekor beruang yang sangat menyayanginya.
+                </p>
+
+            </div>
+
+            <!-- ARTIKEL KEDUA -->
+            <div class="article">
+
+                <h2>Tempat Tinggal Masha</h2>
+
+                <h4>♡ Rumah Masha di Rusia</h4>
+
+                <img
+                    src="../img/rusia (tempat tinggal mar).jpg"
+                    alt="Tempat tinggal Masha"
+                >
+
+                <h3>Rumah Masha</h3>
+
+                <p>
+                    Dalam kartun Masha and the Bear, Masha
+                    digambarkan tinggal di sebuah rumah kecil
+                    di dekat hutan Rusia. Rumahnya berada
+                    tidak jauh dari tempat tinggal Beruang
+                    (The Bear). Masha sering bermain,
+                    berpetualang, dan mengunjungi rumah Beruang.
+                </p>
+
+            </div>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <!-- ABOUT ME -->
+            <div class="side-box">
+
+                <h2>About Me ♡</h2>
+
+                <img src="../img/marrr.png" alt="Masha">
+
+                <p><b>Nama:</b> Masha</p>
+                <p><b>Asal:</b> Rusia</p>
+                <p><b>Karakter:</b> Ceria dan Aktif</p>
+
+            </div>
+
+            <!-- FOLLOW ME -->
+            <div class="side-box">
+
+                <h2>Follow Me ♡</h2>
+
+                <a href="https://www.instagram.com/">♡ Instagram</a>
+                <a href="#">♡ Youtube</a>
+                <a href="https://www.tiktok.com/id-ID/">♡ TikTok</a>
+                <a href="#">♡ Facebook</a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>Masha Website ♡</h2>
+
+        <p>© 2026 Masha Website | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+</html>

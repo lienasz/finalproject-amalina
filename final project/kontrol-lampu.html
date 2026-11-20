@@ -1,0 +1,185 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kontrol 4 lampu</title>
+
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .wadah-lampu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .lampu-card {
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 10px;
+            width: 150px;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Background card 1 */
+        .card1 {
+            background-image: url("../img/marrr.png");
+        }
+
+        /* Background card 2 */
+        .card2 {
+            background-image: url("../img/masha2.jpg");
+        }
+
+        /* Background card 3 */
+        .card3 {
+            background-image: url("../img/mashaaaa.jpg");
+        }
+
+        /* Background card 4 */
+        .card4 {
+            background-image: url("../img/masha3.jpg");
+        }
+
+        img {
+            display: block;
+            margin: 10px auto;
+        }
+        .nav {
+            text-align: center;
+            margin: 20px;
+        }
+        .nav button {
+            text-align: center;
+            padding: 10px 24px;
+            font-size: 16px;
+            font-family: 'Fredoka', sans-serif;
+            border-radius: 25px;
+            background: white;
+            color: #a84aa5;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <br><br>
+    <div class="container">
+
+        <h2>kontrol 4 lampu menggunakan javascript</h2>
+        <br>
+        <div class="nav">
+        <button onclick="location.href='table.html'">Home</button>
+        <button onclick="location.href='layout.html'">layout</button>
+    </div>
+
+        <div class="wadah-lampu">
+
+            <div class="lampu-card card1">
+
+                <p>lampu 1</p>
+                <button onclick="nyalakanlampu(1)">nyalakan</button>
+                <img id="gambarlampu1" src="../img/lampu mati.jpg" width="100">
+                <p id="status1">lampu mati</p>
+                <p id="timer1">00:03</p>
+            </div>
+
+            <div class="lampu-card card2">
+                <p>lampu 2</p>
+                <button onclick="nyalakanlampu(2)">nyalakan</button>
+                <img id="gambarlampu2" src="../img/lampu mati.jpg" width="100">
+                <p id="status2">lampu mati</p>
+                <p id="timer2">00:03</p>
+            </div>
+
+            <div class="lampu-card card3">
+                <p>lampu 3</p>
+                <button onclick="nyalakanlampu(3)">nyalakan</button>
+                <img id="gambarlampu3" src="../img/lampu mati.jpg" width="100">
+                <p id="status3">lampu mati</p>
+                <p id="timer3">00:03</p>
+            </div>
+
+            <div class="lampu-card card4">
+                <p>lampu 4</p>
+                <button onclick="nyalakanlampu(4)">nyalakan</button>
+                <img id="gambarlampu4" src="../img/lampu mati.jpg" width="100">
+                <p id="status4">lampu mati</p>
+                <p id="timer4">00:03</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        let waktu = [3, 3, 3, 3];
+        let interval = [null, null, null, null];
+
+        function nyalakanlampu(nomor) {
+
+            let i = nomor - 1;
+
+            clearInterval(interval[i]);
+
+            // Mengubah gambar menjadi lampu hidup
+            document.getElementById("gambarlampu" + nomor).src =
+                "../img/lampu hidup.jpg";
+
+            document.getElementById("status" + nomor).innerText =
+                "lampu menyala";
+
+            waktu[i] = 3;
+
+            document.getElementById("timer" + nomor).innerText = "00:03";
+
+            interval[i] = setInterval(function () {
+
+                waktu[i]--;
+
+                document.getElementById("timer" + nomor).innerText =
+                    "00:" + String(waktu[i]).padStart(2, "0");
+
+                if (waktu[i] <= 0) {
+                    matikanlampu(nomor);
+                }
+
+            }, 1000);
+        }
+
+        function matikanlampu(nomor) {
+
+            let i = nomor - 1;
+
+            clearInterval(interval[i]);
+
+            // Mengubah gambar kembali menjadi lampu mati
+            document.getElementById("gambarlampu" + nomor).src =
+                "../img/lampu mati.jpg";
+
+            document.getElementById("status" + nomor).innerText =
+                "lampu mati";
+
+            waktu[i] = 3;
+
+            document.getElementById("timer" + nomor).innerText = "00:03";
+
+            interval[i] = null;
+        }
+
+    </script>
+
+</body>
+
+</html>

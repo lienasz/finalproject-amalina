@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>pilih bulan berdasarkan nomor</h2>
+   <!-- form input untuk nomer bulan -->
+    <label for="bulan">masukan nomer bulan</label>
+    <input type="bulan" id="bulan" placeholder="masukan nomor bulan">
+    <button onclick="cekBulan ()">cek bulan</button>
+    <!-- tempat menampilkan hasil --> 
+</body>
+<p id="hasilbulan"></p>
+<script>
+ // fungsi untuk mengecek bulan brtdasarkan nomer yang dimasukan
+ function cekBulan() {
+     // mengambil nilai dari input
+     var  nomorBulan = parseInt(document.getElementById("bulan").value);
+     var hasil = "";
+
+     //menggunakan struktur switch untuk menentukan bulan
+     switch (nomorBulan) {
+        case 1:
+             hasil = "bulan ini adalah bulan januari.";
+             break;
+        case 2:
+            hasil = "bulan ini adalah bulan februari";
+            break;
+        case 3:
+            hasil = "bulan ini adalah bulan maret.";
+            break;
+        case 4:
+            hasil = "bulan ini adalah bulan april.";
+            break;
+        case 5:
+            hasil = "bulan ini adalah bulan mei.";
+            break;
+        case 6:
+            hasil = "bulan ini adalah bulan juni.";
+            break;
+        case 7:
+            hasil = "bulan ini adalah bulan juli.";
+            break;
+        case 8:
+            hasil = "bulan ini adalan bulan agustus.";
+            break;
+        case 9:
+            hasil = "bulan ini adalah bulan september.";
+            break;
+        case 10:
+            hasil = "bulan ini adalah bulan oktober.";
+            break;
+        case 11:
+            hasil = "bulan ini adalah bulan november.";
+            break;
+        case 12:
+            hasil = "bulan ini adalah bulan desember.";
+            break;
+        default:
+            hasil = "nomor bulan tidak valid. masukan angka antara 1 dan 12";
+            
+     }
+     // menampilkan hasil di elemen dengan id 'hasilBulan'
+     document.getElementById("hasilbulan").innerHTML = hasil;
+ }      
+</script>
+</html>

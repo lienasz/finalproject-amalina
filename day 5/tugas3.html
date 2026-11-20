@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>reting restoran bintang 5</h2>
+
+    <label for="reting">masukan reting</label>
+    <input type="number" id="reting" placeholder="masukan reting">
+    <button onclick="cekReting()">cek reting</button>
+
+    <p id="hasil"></p>
+
+    <script>
+      function cekReting() {
+       var reting = Number(document.getElementById("reting").value);
+       var hasil ="";
+       
+      if (reting >= 9) {
+           hasil = "sangat enak.";
+       } else if (reting >= 7) {
+           hasil = "enak.";
+       } else if (reting >= 5) {
+           hasil = "cukup enak.";
+       } else if (reting >= 3) {
+            hasil = "kurang enak."
+       } else {
+             hasil = "tidak enak"
+       }
+
+       document.getElementById("hasil").innerHTML = hasil;
+      }  
+    </script>
+</body>
+</html>
